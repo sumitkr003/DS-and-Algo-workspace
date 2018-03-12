@@ -1,0 +1,37 @@
+package june14;
+
+import java.util.Scanner;
+
+public class waveDisplay {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		System.out.println("enter no of rows");
+		int rows = scn.nextInt();
+		
+		System.out.println("enter no of columns");
+		int cols = scn.nextInt();
+		
+		int[][] arr = new int[rows][cols];
+		
+		int row,col;
+		for(row=0;row<arr.length;row++){
+			for(col=0;col<arr[0].length;col++){
+				arr[row][col] = scn.nextInt();
+			}
+		}
+		
+		for(row=0;row<arr.length-1;row++){
+			for(col=0;col<arr[0].length+1;col++){
+				if(row%2==0){
+					System.out.print(arr[col][row]+" ");
+				}
+				else{
+				System.out.print(arr[arr.length-1-col][row]+" ");
+				}
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package june19;
+
+import java.util.Scanner;
+
+public class Strings {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		String s = scn.nextLine();
+		
+		printsubstrings(s);
+
+	}
+	public static void printsubstrings(String p){
+		int i,j;
+		for(i=0;i<p.length();i++){
+			for(j=i;j<p.length();j++){
+				System.out.println(p.substring(i,j));
+			}
+		}
+	}
+
+}

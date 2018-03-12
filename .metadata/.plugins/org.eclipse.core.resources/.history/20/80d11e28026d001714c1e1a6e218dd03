@@ -1,0 +1,31 @@
+package july12;
+
+public class StacktoQueue {
+	private DynamicStack input = new DynamicStack();
+	private DynamicStack output = new DynamicStack();
+	int size = 0;
+	
+	public void enq(int val) throws Exception{
+	     input.push(val);
+	     this.size++;
+	}
+	
+	public int dq() throws Exception{
+		if(output.isempty()){
+			output.push(input.pop());
+		}
+		this.size--;
+		return output.pop();
+	}
+	
+	public void display() throws Exception{
+		while(input.isempty()){
+			output.push(input.pop());
+		}
+		while(output.isempty()){
+			System.out.print(output.top()+" ");
+			input.push(output.pop());
+		}
+	}
+
+}

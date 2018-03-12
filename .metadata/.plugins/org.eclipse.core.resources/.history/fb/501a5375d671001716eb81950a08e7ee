@@ -1,0 +1,13 @@
+package BinaryTree;
+
+public class Client {
+
+	public static void main(String[] args) {
+//		50 true 25 true 12 false false true 37 false false true 75 true 62 false false true 87 false false
+		BinaryTree bt = new BinaryTree();
+		
+		bt.display();
+
+	}
+
+}

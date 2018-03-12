@@ -1,0 +1,62 @@
+import java.math.BigInteger;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int m = in.nextInt();
+        int[] c = new int[m];
+        for(int c_i=0; c_i < m; c_i++){
+            c[c_i] = in.nextInt();
+        }
+        
+        long ways = getways(n,c,0,0);
+        System.out.println(ways);
+	}
+	
+//	public static long getways(int n,long[] c){
+//		
+//	}
+	
+//	public static long getways(int n,int[] arr,int idx,int target,long count){
+//		if(idx == arr.length){
+//			return count;
+//		}
+//		if(target == n){
+//			count++;
+//			return count;
+//		}else if(target>n){
+//			return count;
+//		}
+//		
+//		count = getways(n,arr,idx,target+arr[idx],count);
+//		for(int i = idx+1;i<arr.length;i++){
+//			count = getways(n,arr,i,target+arr[i],count);
+//		}
+//		
+//		return count;
+//	}
+	
+	public static long getways(int n,int[] arr,int idx,int target){
+		if(idx == arr.length){
+			return 0;
+		}
+		if(target == n){
+			
+			return 1;
+		}else if(target>n){
+			return 0;
+		}
+		
+		long x = getways(n,arr,idx,target+arr[idx]);
+		long y=0;
+		for(int i = idx+1;i<arr.length;i++){
+			 y = getways(n,arr,i,target+arr[i]);
+		}
+		
+		return Math.max(x,y);
+	}
+}
+

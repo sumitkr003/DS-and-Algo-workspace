@@ -1,0 +1,17 @@
+
+public class MCM {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[] = {10,10,10,10,50,60};
+		System.out.println(mcmRecursion(arr,0,arr.length-1));
+
+	}
+	
+	public static int mcmRecursion(int[] arr,int i,int j){
+		int min = Integer.MIN_VALUE;
+		
+		return min;
+	}
+
+}

@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int q = in.nextInt();
+        int[] a = new int[n];
+        for(int a_i=0; a_i < n; a_i++){
+            a[a_i] = in.nextInt();
+        }
+        int j = a.length-1;
+        int x =0;
+        k = k%n;
+        int y = k -1;
+        int[] temp = new int[n];
+        for(int i =0;i<a.length;i++){
+                if(i<k){
+                    temp[y] = a[j];
+                    y--;
+                    j--;
+                }else{
+                    temp[i] = a[x];
+                    x++;
+                }
+        }
+        
+//        for(int a0 = 0; a0 < q; a0++){
+//            int m = in.nextInt();
+//            System.out.println(temp[m]);
+//            
+//        }
+	    }
+}

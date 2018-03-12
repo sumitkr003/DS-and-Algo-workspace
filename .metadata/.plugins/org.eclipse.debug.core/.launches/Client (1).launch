@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/CB_crux/src/BinaryTree/Client.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="BinaryTree.Client"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="( )is called with an integer argument insideOverload, no matching method is found.&#13;&#10;However, Java can automatically convert an integer into adouble, and this conversion can&#13;&#10;be used to resolve the call. Therefore, aftertest(int)is not found, Java elevatesitodouble&#13;&#10;and then callstest(double). Of course, iftest(int)had been defined, it would have been called&#13;&#10;instead. Java will employ its automatic type conversions only if no exact match is found.&#13;&#10;Method overloading supports polymorphism because it is one way that Java implements&#13;&#10;the “one interface, multiple methods” paradigm. To understand how, consider the following.&#13;&#10;In languages that do not support method overloading, each method must be given a unique&#13;&#10;name. However, frequently you will want to implement esse"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="CB_crux"/>
+</launchConfiguration>

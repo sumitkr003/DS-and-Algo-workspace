@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/CB_crux/src/GenericTree/GenericHeapClient.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value=""/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="4HINGS AN OBJECT CAN DOARE CALLED METHODS&#14; 7HEN YOU &#13;&#10;DESIGN A CLASS&#12; YOU THINK ABOUT THE DATA AN OBJECT WILL NEED &#13;&#10;TO KNOW ABOUT ITSELF&#12; AND YOU ALSO DESIGN THE METHODS &#13;&#10;THAT OPERATE ON THAT DATA&#14; )T&#7;S COMMON FOR AN OBJECT TO &#13;&#10;HAVE METHODS THAT READ OR WRITE THE VALUES OF THE INSTANCE &#13;&#10;VARIABLES&#14; &amp;OR EXAMPLE&#12; !LARM OBJECTS HAVE AN INSTANCE &#13;&#10;VARIABLE TO HOLD THE ALARM4IME&#12; AND TWO METHODS FOR &#13;&#10;GETTING AND SETTING THE ALARM4IME"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value=""/>
+</launchConfiguration>

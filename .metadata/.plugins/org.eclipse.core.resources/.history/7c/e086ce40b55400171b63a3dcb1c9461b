@@ -1,0 +1,49 @@
+package june19;
+
+import java.util.Scanner;
+
+public class Strings {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		String s = scn.nextLine();
+		
+		printsubstrings(s);
+		
+		ispalindrome(s);
+		
+		substringispalindome(s);
+
+	}
+	public static void printsubstrings(String p){
+		int i,j;
+		for(i=0;i<p.length();i++){
+			for(j=i;j<=p.length();j++){
+				System.out.println(p.substring(i,j));
+			}
+		}
+	}
+	public static void ispalindrome(String q){
+		int i;
+		for(i=0;i<q.length();i++){
+			if(q.charAt(i)!=q.charAt(q.length()-1)){
+			 System.out.println(false);
+			 return;
+			}
+		}
+		System.out.println(true);
+		return;
+	}
+	public static void substringispalindome(String r){
+		int i,j;
+		for(i=0;i<r.length();i++){
+			for(j=i;j<=r.length();j++){
+				if((r.substring(i,j+1)).equals(r.substring(j,i+1))){
+					System.out.println(r.substring(i,j+1));
+				}
+			}
+		}
+		return;
+	}
+
+}

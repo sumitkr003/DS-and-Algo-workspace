@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Practice/src/BinaryTree.java&apos; to &apos;BinaryTreeClient.java&apos;" description="Rename resource &apos;BinaryTree.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/BinaryTree.java" name="BinaryTreeClient.java" stamp="1514899849838" updateReferences="true"/>
+</session>

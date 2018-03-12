@@ -1,0 +1,157 @@
+package Assignment8b_Recursion;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Question9 {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int row = scn.nextInt();
+		int col = row;
+
+		System.out.println(chess(row, col, 0, 0, 0));
+		
+//		System.out.println(moves(row, col, 0, 0));
+		
+//		printmoves(row,col,0,0,"");
+
+	}
+
+	public static int chess(int row, int col, int cr, int cc, int count) {
+		if (cr == row && cc == col) {
+			count++;
+			return count;
+		}
+		if (cr > row || cc > col) {
+			return count;
+		}
+
+		// calls for knights positive moves
+		count = chess(row, col, cr + 1, cc + 2, count);
+		count = chess(row, col, cr + 2, cc + 1, count);
+
+		// calls for rook positive moves
+		if (cr == 0 || cr == row || cc == 0 || cc == col) {
+			//row positive moves
+			for (int i = 1; i <= row; i++) {
+                    count = chess(row,col,cr+i,cc,count);
+			}
+			
+			//col positive moves
+			for(int i = 1;i<=col;i++){
+				count = chess(row,col,cr,cc+i,count);
+			}
+		}
+		
+		//calls for bishop moves
+		if(cr==cc || cr+cc==row ){
+			for(int i=1;i<=row;i++){
+				count = chess(row,col,cr+i,cc+i,count);
+			}
+		}
+		
+		return count;
+
+	}
+
+	public static ArrayList<String> moves(int row,int col,int cr,int cc){
+		if (cr == row && cc == col) {
+			ArrayList<String> r = new ArrayList<>();
+			r.add("");
+			return r;
+		}
+		if (cr > row || cc > col) {
+			ArrayList<String> r = new ArrayList<>();
+			return r;
+		}
+		
+		ArrayList<String> rv = new ArrayList<>();
+		
+		// calls for knights positive moves
+		ArrayList<String> rr = moves(row, col, cr + 1, cc + 2);
+		                    for(String val:rr){
+        	                rv.add('k'+val);
+                            }
+		                    
+				rr = moves(row, col, cr + 2, cc + 1);
+				
+				for(String val:rr){
+                	rv.add('k'+val);
+                }
+                
+
+				// calls for rook positive moves
+				if (cr == 0 || cr == row || cc == 0 || cc == col) {
+					//row positive moves
+					for (int i = 1; i <= row; i++) {
+		                    rr = moves(row,col,cr+i,cc);
+		                    for(String val:rr){
+		                    	rv.add("Rr"+i+val);
+		                    }
+					}
+					
+					//col positive moves
+					for(int i = 1;i<=col;i++){
+						rr = moves(row,col,cr,cc+i);
+						for(String val:rr){
+	                    	rv.add("Rc"+i+val);
+	                    }
+					}
+				}
+				
+				//calls for bishop moves
+				if(cr==cc || cr+cc==row ){
+					for(int i=1;i<=row;i++){
+						rr = moves(row,col,cr+i,cc+i);
+						for(String val:rr){
+	                    	rv.add("B"+i+val);
+	                    }
+					}
+				}
+				
+				return rv;
+	}
+
+	public static void printmoves(int row,int col,int cr,int cc,String ans){
+		if (cr == row && cc == col) {
+			ans+="{"+cr+"-"+cc+"}";
+			System.out.println(ans+" ");
+			return;
+		}
+		if (cr > row || cc > col) {
+			return ;
+		}
+		
+		
+		
+		// calls for knights positive moves
+		 printmoves(row, col, cr + 1, cc + 2,ans+'{'+cr+"-"+cc+"}"+"k");
+	     printmoves(row, col, cr + 2, cc + 1,ans+'{'+cr+"-"+cc+"}"+"k");
+				
+
+		// calls for rook positive moves
+				if (cr == 0 || cr == row || cc == 0 || cc == col) {
+					//row positive moves
+					for (int i = 1; i <= row; i++) {
+		                     printmoves(row,col,cr+i,cc,ans+'{'+cr+"-"+cc+"}"+"R");
+					}
+					
+					//col positive moves
+					for(int i = 1;i<=col;i++){
+						 printmoves(row,col,cr,cc+i,ans+'{'+cr+"-"+cc+"}"+"R");
+					}
+				}
+				
+				//calls for bishop moves
+				if(cr==cc || cr+cc==row ){
+					for(int i=1;i<=row;i++){
+						printmoves(row,col,cr+i,cc+i,ans+'{'+cr+"-"+cc+"}"+"B");
+					}
+				}
+				
+				return ;
+	}
+
+	
+}

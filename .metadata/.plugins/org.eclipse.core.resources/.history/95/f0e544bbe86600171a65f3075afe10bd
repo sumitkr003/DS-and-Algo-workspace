@@ -1,0 +1,12 @@
+package july12;
+
+public class StackClient {
+
+	public static void main(String[] args) throws Exception{
+	  Stack st = new Stack(5);
+	  st.push(10);
+	  st.display();
+
+	}
+
+}

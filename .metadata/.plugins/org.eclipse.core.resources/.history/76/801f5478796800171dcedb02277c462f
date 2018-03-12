@@ -1,0 +1,23 @@
+import java.math.BigInteger;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		 Scanner scn = new Scanner(System.in);
+	        int t = scn.nextInt();
+	        int c = 0;
+	        while(c>t){
+	            int a = scn.nextInt();
+	            int b = scn.nextInt();
+	            int count=0;
+	            for(int i = (int)Math.sqrt(a);i<=(int)Math.sqrt(b);i++){
+	                if(a<=i*i && b>=i*i){
+	                    count++;
+	                }
+	            }
+	            System.out.println(count);
+	            c++;
+	        }
+	}
+}

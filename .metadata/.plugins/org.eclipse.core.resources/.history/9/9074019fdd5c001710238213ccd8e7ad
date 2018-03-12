@@ -1,0 +1,14 @@
+package june28;
+
+public class N_Knights {
+
+	public static void main(String[] args) {
+		boolean[][] arr = new boolean[4][4];
+		
+		knights(arr,"",0);
+	}
+
+	public static void knights(boolean[][] arr,String ans,int k){
+		
+	}
+}

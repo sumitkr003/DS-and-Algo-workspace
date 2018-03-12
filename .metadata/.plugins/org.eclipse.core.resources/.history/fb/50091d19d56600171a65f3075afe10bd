@@ -1,0 +1,29 @@
+package july12;
+
+public class lexicographical {
+
+	public static void main(String[] args) {
+		dic(20,0,1);
+
+	}
+
+	public static void dic(int num,int ans,int n){
+		if(ans<=num){
+			System.out.println(ans);
+			return;
+		}
+		else if(ans>num){
+			return;
+		}
+		
+		for(int i=1;i<=9;i++){
+			if(i<=n && ans<num)
+			{
+			dic(num,ans*10+i,i);
+			}
+		
+		
+		}
+		return;
+	}
+}

@@ -1,0 +1,41 @@
+package june19;
+import java.util.Scanner;
+
+public class PrintingPermutation {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		String s = scn.nextLine();
+		permutation(s);
+
+	}
+	public static String permutation(String s){
+		StringBuilder sb;
+		int i,j;
+		if(s.length()==1){
+			return s;
+		}
+		for(i=0;i<s.length();i++){
+			sb = new StringBuilder(s);
+			char ch = sb.charAt(i);
+			sb.deleteCharAt(i);
+				for(j=0;j<factorial(sb.length()-1);j++){
+					System.out.print(ch);
+					System.out.print(permutation(sb.toString()));
+					System.out.println();
+				}
+			
+			
+		}
+		return "";
+	}
+	public static int factorial(int fac){
+
+		if (fac<=1){
+			return 1;
+		}
+		fac = fac * (fac-1) * factorial(fac-2);
+	    return fac;
+	}
+
+}

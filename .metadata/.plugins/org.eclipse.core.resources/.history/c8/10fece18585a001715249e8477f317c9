@@ -1,0 +1,24 @@
+package june26;
+
+public class permutaions {
+
+	public static void main(String[] args) {
+		String str ="abc";
+		permutations(str,"");
+
+	}
+	public static void permutations(String str,String ans){
+		if(str.length()==0){
+			System.out.print(ans+" ");
+			return;
+		}
+		char ch = str.charAt(0);
+		String roq = str.substring(1);
+		for(int i=0;i<=str.length();i++){
+			permutations(roq,roq.substring(0,i)+ch+roq.substring(i));
+		}
+		return ;
+	}
+	
+
+}

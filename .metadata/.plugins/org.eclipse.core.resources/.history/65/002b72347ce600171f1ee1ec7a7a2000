@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class RecursiveDigitSum {
+
+	public static void main(String[] args) {
+		 Scanner in = new Scanner(System.in);
+	        String n = in.next();
+	        int k = in.nextInt();
+	        String str = "";
+	        for(int i = 0;i<k;i++){
+	            str+=n;
+	        }
+	        int result = superDigit(n);
+	        System.out.println(result);
+	        in.close();
+
+	}
+	static int superDigit(String n) {
+        // base case((n/10)<0)
+        if(n.length()==1){
+            return Integer.parseInt(n);
+        }
+        int num =  Integer.parseInt(n),rem = 0;
+        while(num>0){
+            rem+=num%10;
+            num = num/10;
+        }
+        n = String.valueOf(rem);
+        return superDigit(n);
+    }
+}

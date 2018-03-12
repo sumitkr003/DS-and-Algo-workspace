@@ -1,0 +1,27 @@
+import java.math.BigInteger;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		 Scanner in = new Scanner(System.in);
+	        int d1 = in.nextInt();
+	        int m1 = in.nextInt();
+	        int y1 = in.nextInt();
+	        int d2 = in.nextInt();
+	        int m2 = in.nextInt();
+	        int y2 = in.nextInt();
+	        if(y2!=y1){
+	            System.out.println("10000");
+	            return;
+	        }else if(m2!=m1){
+	            System.out.println(500*(m1-m2));
+	            return;
+	        }else if(d2!=d1){
+	            System.out.println(15*(m1-m2));
+	            return;
+	        }else{
+	            System.out.println("0");
+	        }
+	}
+}

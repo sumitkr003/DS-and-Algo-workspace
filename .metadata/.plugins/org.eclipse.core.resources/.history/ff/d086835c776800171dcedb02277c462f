@@ -1,0 +1,11 @@
+import java.math.BigInteger;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+	
+		int b = (int)Math.sqrt(16);
+		System.out.println(b);
+	}
+}

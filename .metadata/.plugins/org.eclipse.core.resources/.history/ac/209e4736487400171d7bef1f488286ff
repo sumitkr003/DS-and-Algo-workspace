@@ -1,0 +1,41 @@
+package HashMap;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class HahsMap {
+
+	public static void main(String[] args) {
+		characterfrequency("abrakadabra");
+
+	}
+	
+	public static void characterfrequency(String str){
+		HashMap<Character,Integer> fre = new HashMap<>();
+		
+		for(int i = 0;i<str.length() - 1;i++){
+		     if(fre.containsKey(str.charAt(i))){
+		    	 fre.put(str.charAt(i),fre.get(str.charAt(i))+1);
+		     }else{
+		    	 fre.put(str.charAt(i),1);
+		     }
+		}
+		
+		ArrayList<Character> arr = new ArrayList<>(fre.keySet());
+		int max = Integer.MIN_VALUE;
+		char chr=' ';
+		
+		for(int i = 0;i<arr.size() - 1;i++){
+			char ch = arr.get(i);
+		    int x = fre.get(ch);
+		    
+		    if(x>max){
+		    	max = x;
+		    	chr = ch;
+		    }
+		}
+		
+		System.out.println(chr+"=>"+max);
+	}
+
+}

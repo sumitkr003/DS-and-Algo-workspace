@@ -1,0 +1,29 @@
+package june23;
+
+public class pattern2 {
+
+	public static void main(String[] args) {
+		pattern(1,1,1,5);
+
+	}
+	public static void pattern(int row,int col,int space,int n){
+		if(row>n){
+			return;
+		}
+		if(col>2*row-1){
+			System.out.println();
+			pattern(row+1,1,space,n);
+			return;
+		}
+		if(space==n){
+			pattern(row,col,row+1,n);
+			return;
+		}
+		System.out.print(" ");
+		pattern(row,col,space+1,n);
+		System.out.print("*");
+		
+		return;
+	}
+
+}

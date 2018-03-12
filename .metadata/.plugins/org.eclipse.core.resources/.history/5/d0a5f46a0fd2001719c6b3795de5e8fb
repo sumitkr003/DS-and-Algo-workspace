@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+
+public class BoardPath {
+
+	public static void main(String[] args) {
+		System.out.println(path(0,10));
+
+	}
+	
+	public static ArrayList<String> path(int curr,int end){
+		if(curr>end){
+			ArrayList<String> n = new ArrayList<>();
+			return n;
+		}else if(curr == end){
+			ArrayList<String> rp = new ArrayList<>();
+			rp.add("");
+			return rp;
+		}
+		
+		ArrayList<String> path = new ArrayList<>();
+		
+		for(int i=1;i<7;i++){
+			ArrayList<String> rp = path(curr+1,end);
+			for(String rs:rp){
+				path.add(i+rs);
+			}
+		}
+		
+		return path;
+	}
+
+}

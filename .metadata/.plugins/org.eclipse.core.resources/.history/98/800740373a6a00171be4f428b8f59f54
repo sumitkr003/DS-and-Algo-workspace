@@ -1,0 +1,29 @@
+import java.math.BigInteger;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		String str1 = "abcdef";
+		String str2 = "abcefg";
+		
+		int count=0;
+		char ch1,ch2;
+		String ros1,ros2;
+		for(int i =0;i<str1.length() && i<str2.length();i++){
+			ch1 = str1.charAt(i);
+			ch2 = str2.charAt(i);
+			
+			ros1 = str1.substring(i);
+			ros2 = str2.substring(i);
+			
+			if(ch1==ch2){
+				count++;
+				continue;
+			}else{
+				
+			}
+		}
+	}
+}
+

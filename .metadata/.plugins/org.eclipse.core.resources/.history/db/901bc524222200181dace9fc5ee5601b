@@ -1,0 +1,35 @@
+
+public class MCM {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[] = {10,20,30,40,50,60};
+		int storage[][] = new int[arr.length-1][arr.length];
+		System.out.println(mcmRecursion(arr,0,arr.length-1,storage));
+
+	}
+	
+	public static int mcmRecursion(int[] arr,int si,int ei,int storage[][]){
+		if(ei-si==1){
+			return 0;
+		}
+		if(storage[si][ei]!=0){
+			return storage[si][ei];
+		}
+		
+		int min = Integer.MAX_VALUE;
+		for(int i=si+1;i<ei;i++){
+			int count = mcmRecursion(arr, 0, i,storage) + mcmRecursion(arr,i+1,ei,storage);
+			count+= arr[0]*arr[i]*arr[ei];
+			
+			if(count<min){
+				min = count;
+			}
+		}
+		
+		storage[si][ei] = min;
+		
+		return min;
+	}
+
+}

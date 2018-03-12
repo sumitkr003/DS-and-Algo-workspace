@@ -1,0 +1,10 @@
+package june14;
+
+public class waveDisplay {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

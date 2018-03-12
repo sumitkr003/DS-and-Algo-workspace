@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class BinaryTree {
+	private class Node{
+		int data;
+		Node left;
+		Node right;
+	}
+	
+	Node root;
+	int size;
+	
+	public BinaryTree(){
+		Scanner scn = new Scanner(System.in);
+		root = takeInput(null,true,scn);
+	}
+	
+	public Node takeInput(Node parent,boolean ilc,Scanner scn){
+		if(parent == null){
+			System.out.println("Enter root data ");
+		}else if(ilc){
+			System.out.println("Enter "+parent.data +" left's child ");
+		}else{
+			System.out.println("Enter "+parent.data+" right's child ");
+		}
+		
+		int data = scn.nextInt();
+		
+		Node child = new Node();
+		child.data = data;
+		this.size++;
+		
+		System.out.println("does "+ data +" has a left child ");
+		boolean hlc = scn.nextBoolean();
+		
+		if(hlc){
+			child.left = takeInput(child,true,scn);
+		}
+		
+		System.out.println("does "+ data + " has a right child");
+		boolean hrc = scn.nextBoolean();
+		
+		if(hrc){
+			child.right = takeInput(child, false, scn);
+		}
+		
+		return child;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

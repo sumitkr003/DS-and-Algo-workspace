@@ -1,0 +1,42 @@
+import java.math.BigInteger;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int m = in.nextInt();
+        int[] c = new int[m];
+        for(int c_i=0; c_i < m; c_i++){
+            c[c_i] = in.nextInt();
+        }
+        
+        long ways = getways(n,c,0,0,0);
+        System.out.println(ways);
+	}
+	
+//	public static long getways(int n,long[] c){
+//		
+//	}
+	
+	public static long getways(int n,int[] arr,int idx,int target,long count){
+		if(idx == arr.length){
+			return count;
+		}
+		if(target == n){
+			count++;
+			return count;
+		}else if(target>n){
+			return count;
+		}
+		
+		count = getways(n,arr,idx,target+arr[idx],count);
+		for(int i = idx;i<arr.length;i++){
+			count = getways(n,arr,idx+1,target+arr[idx],count);
+		}
+		
+		return count;
+	}
+}
+

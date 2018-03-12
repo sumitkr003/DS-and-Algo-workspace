@@ -1,0 +1,24 @@
+import java.math.BigInteger;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		 Scanner in = new Scanner(System.in);
+	      int n = in.nextInt();
+//	      long fac = 1;
+//	      while(n>1){
+//	    	  fac = fac * n;
+//	    	  n--;
+//	      }
+//	      System.out.println(fac);
+//	      String str = "7034535277573963776";
+//	      System.out.println(str.length());
+	      
+	      BigInteger a = new BigInteger("9");
+	      BigInteger ab = new BigInteger("9");
+	      BigInteger c = a.multiply(ab);
+	      System.out.println(c);
+	      
+	}
+}

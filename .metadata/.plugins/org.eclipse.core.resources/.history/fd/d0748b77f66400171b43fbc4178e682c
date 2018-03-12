@@ -1,0 +1,21 @@
+import java.math.BigInteger;
+import java.util.*;
+
+public class test {
+
+	public static void main(String[] args) {
+		 Scanner in = new Scanner(System.in);
+	      BigInteger n = in.nextBigInteger();
+//	      BigInteger fac = new BigInteger("1");
+//	      while(n>1){
+//	    	  fac = fac.multiply(n);
+//	    	  n--;
+//	      }
+//	      System.out.println(fac);
+//	      String str = "7034535277573963776";
+//	      System.out.println(str.length());
+	      
+	     System.out.println(n);
+	      
+	}
+}

@@ -1,0 +1,10 @@
+package june26;
+
+public class Hi_Bye {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

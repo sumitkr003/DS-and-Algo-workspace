@@ -1,0 +1,16 @@
+package BinaryTree;
+
+public class BstClient {
+
+	public static void main(String[] args) {
+		int[] post = {12,30,40,37,25,62,87,75,50};
+		int[] in = {12,25,30,37,40,50,62,75,87};
+		
+		BST b = new BST(post,in);
+		b.add(60);
+		b.add(63);
+	    b.display();
+
+	}
+
+}

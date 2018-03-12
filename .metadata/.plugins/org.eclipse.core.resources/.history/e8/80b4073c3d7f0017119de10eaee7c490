@@ -1,0 +1,93 @@
+package Graph;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Graph {
+	private class vertex{
+		HashMap<String, Integer> neighbours = new HashMap<>();
+	}
+	
+	private HashMap<String,vertex> vces = new HashMap<>();
+	
+	public int nymvertices(){
+		return vces.size();
+	}
+	
+	public boolean containsvertex(String vname){
+		return vces.containsKey(vname);
+	}
+	
+	public void addvertex(String vname){
+		if(vces.containsKey(vname)){
+			return;
+		}
+		vertex vtx = new vertex();
+		
+		
+		vces.put(vname,vtx);
+	}
+	
+	public int numedges(){
+		int rv = 0;
+		
+		ArrayList<String> vtx = new ArrayList<>(vces.keySet());
+		
+		for(String val:vtx){
+			vertex n = vces.get(val);
+			rv += n.neighbours.size();
+		}
+		
+		return rv/2;
+	}
+	
+	public boolean containsedge(String vname1,String vname2){
+		vertex vtx1 = vces.get(vname1);
+		vertex vtx2 = vces.get(vname2);
+		
+		if(vtx1 == null || vtx2 == null || vtx1.neighbours.containsKey(vname2) == false){
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public void addedge(String vname1,String vname2,int weight){
+		vertex vtx1 = vces.get(vname1);
+		vertex vtx2 = vces.get(vname2);
+		
+		if(vtx1 == null || vtx2 == null){
+			return;
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

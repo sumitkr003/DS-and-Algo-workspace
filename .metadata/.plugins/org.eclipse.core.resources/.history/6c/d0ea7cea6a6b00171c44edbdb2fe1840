@@ -1,0 +1,64 @@
+package july12;
+
+public class ClientQueue {
+
+	public static void main(String[] args) throws Exception{
+		DynamicQueue q = new DynamicQueue();
+		
+		q.enq(10);
+		q.display();
+
+		q.enq(20);
+		q.display();
+		
+		q.enq(30);
+		q.display();
+		
+		q.enq(40);
+		q.display();
+		
+		q.enq(80);
+		q.display();
+		
+		q.enq(90);
+		q.display();
+		
+		q.dq();
+		q.display();
+		
+		q.dq();
+		q.display();
+		
+		q.enq(50);
+		q.display();
+		
+		q.enq(60);
+		q.display();
+		
+		q.enq(70);
+		q.display();
+		
+		displayreverse(q);
+		
+		q.display();
+		
+	}
+
+	public static void displayreverse(DynamicQueue q) throws Exception{
+		if(q.size==0){
+			return;
+		}
+		int temp = q.dq();
+		q.enq(temp);
+		displayreverse(q);
+		System.out.print(temp +" ");
+		return;
+	}
+	
+	public static void reverse(DynamicQueue q) throws Exception{
+	       int temp = q.dq();
+	       reverse(q);
+	       System.out.print(temp);
+	       
+	}
+}

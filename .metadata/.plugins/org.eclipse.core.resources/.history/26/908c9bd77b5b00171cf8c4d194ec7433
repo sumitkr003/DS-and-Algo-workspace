@@ -1,0 +1,26 @@
+package june26;
+
+import java.util.Scanner;
+
+public class Hi_Bye {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		String str = scn.nextLine();
+		System.out.println(hibye(str));
+
+	}
+	public static int hibye(String str){
+		if(str.length()==2){
+			return 0;
+		}
+		String x = str.substring(0,2);
+		String ros = str.substring(1);
+		int count = hibye(ros);
+		if(x.equals("hi")){
+			count++;
+		}
+		return count;
+	}
+
+}

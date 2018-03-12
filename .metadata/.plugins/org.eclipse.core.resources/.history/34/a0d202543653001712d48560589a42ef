@@ -1,0 +1,39 @@
+package june14;
+
+import java.util.Scanner;
+
+public class IntersectionOf2Arrays {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		System.out.println("enter length of array");
+		int m = scn.nextInt();
+		int[] arr1 = new int[m];
+		int i,j;
+
+		for (i = 0; i < arr1.length; i++) {
+			arr1[i] = scn.nextInt();
+		}
+		System.out.println("enter length of another array");
+		
+		int[] arr2 = new int[m];
+
+		for (i = 0; i < arr2.length; i++) {
+			arr2[i] = scn.nextInt();
+		}
+		System.out.print("[");
+		
+		for(i=0;i<m;i++){
+			for(j=0;j<m;j++){
+				if(arr1[i]==arr2[j]){
+					System.out.print(arr1[i]+", ");
+					arr1[j]=-1;
+					break;
+				}
+			}
+		}
+		System.out.println("]");
+
+	}
+
+}

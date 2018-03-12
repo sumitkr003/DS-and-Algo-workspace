@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;CB_crux/src/Generics/Car.java&apos;" deleteContents="false" description="Delete resource &apos;CB_crux/src/Generics/Car.java&apos;" element1="/CB_crux/src/Generics/Car.java" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1501494667046"/>&#x0A;<refactoring comment="Delete resource &apos;CB_crux/src/Heap/GenericHeap.java&apos;" deleteContents="false" description="Delete resource &apos;CB_crux/src/Heap/GenericHeap.java&apos;" element1="/CB_crux/src/Heap/GenericHeap.java" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1501498907421"/>
+</session>

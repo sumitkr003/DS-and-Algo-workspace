@@ -1,0 +1,37 @@
+package june19;
+
+import java.util.Scanner;
+
+public class StringAssignment {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		String s = scn.nextLine();
+		System.out.println(frequency(s));
+
+	}
+	public static String frequency(String s){
+		StringBuilder sb = new StringBuilder("");
+		int max=0,temp;
+		char k=s.charAt(0);
+		for(int i=0;i<s.length();i++){
+			temp=0;
+			for(int j=i+1;j<s.length();j++){
+				if(s.charAt(i)==s.charAt(j)){
+					temp++;
+					k=s.charAt(j);
+				}
+				
+				if(temp>max){
+					max=temp;
+					sb.append(k);
+				}
+			}
+		}
+		 
+		 char q=sb.charAt(sb.length()-1);
+		 String a = q+":" + max;
+		 return a;
+	}
+
+}

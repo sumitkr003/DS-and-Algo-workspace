@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Hackerrank/src/jcs.java&apos; to &apos;Between2Sets.java&apos;" description="Rename resource &apos;jcs.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/jcs.java" name="Between2Sets.java" stamp="1497767697501" updateReferences="true"/>
+</session>

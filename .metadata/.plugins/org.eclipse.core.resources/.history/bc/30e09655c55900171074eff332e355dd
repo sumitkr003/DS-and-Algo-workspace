@@ -1,0 +1,8 @@
+package june23;
+
+public class pattern2 {
+ 
+}
+public static void pattern(int row,int col,int n){
+	
+}

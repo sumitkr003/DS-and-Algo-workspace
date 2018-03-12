@@ -1,0 +1,161 @@
+package Graph;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Graph {
+	private class vertex{
+		HashMap<String, Integer> neighbours = new HashMap<>();
+	}
+	
+	private HashMap<String,vertex> vces = new HashMap<>();
+	
+	public int nymvertices(){
+		return vces.size();
+	}
+	
+	public boolean containsvertex(String vname){
+		return vces.containsKey(vname);
+	}
+	
+	public void addvertex(String vname){
+		if(vces.containsKey(vname)){
+			return;
+		}
+		vertex vtx = new vertex();
+		
+		
+		vces.put(vname,vtx);
+	}
+	
+	public int numedges(){
+		int rv = 0;
+		
+		ArrayList<String> vtx = new ArrayList<>(vces.keySet());
+		
+		for(String val:vtx){
+			vertex n = vces.get(val);
+			rv += n.neighbours.size();
+		}
+		
+		return rv/2;
+	}
+	
+	public boolean containsedge(String vname1,String vname2){
+		vertex vtx1 = vces.get(vname1);
+		vertex vtx2 = vces.get(vname2);
+		
+		if(vtx1 == null || vtx2 == null || vtx1.neighbours.containsKey(vname2) == false){
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public void addedge(String vname1,String vname2,int weight){
+		vertex vtx1 = vces.get(vname1);
+		vertex vtx2 = vces.get(vname2);
+		
+		if(vtx1 == null || vtx2 == null){
+			return;
+		}
+		
+		vtx1.neighbours.put(vname2, weight);
+		vtx2.neighbours.put(vname1, weight);
+		
+	}
+	
+	public void removeedge(String vname1,String vname2){
+		vertex vtx1 = vces.get(vname1);
+		vertex vtx2 = vces.get(vname2);
+		
+		if(vtx1 == null || vtx2 == null || vtx1.neighbours.containsKey(vname2) == false){
+			return;
+		}
+		
+		vtx1.neighbours.remove(vname2);
+		vtx2.neighbours.remove(vname1);
+	}
+	
+	public void display(){
+        ArrayList<String> vtx = new ArrayList<>(vces.keySet());
+		
+		for(String val:vtx){
+			vertex n = vces.get(val);
+			ArrayList<String> nebrs = new ArrayList<>(n.neighbours.keySet());
+			
+			String ans = val + "=>";
+			
+			for(String val2:nebrs){
+				ans+=val2;
+				ans+="[" + n.neighbours.get(val2) + "] ";
+			}
+			
+			System.out.println(ans);
+		}
+	}
+	
+	
+	public void removevertex(String vname){
+	     vertex vtx = vces.get(vname);
+	     
+	     ArrayList<String> nebrs = new ArrayList<>(vtx.neighbours.keySet());
+	     
+	     for(String nebrsname:nebrs){
+	    	 vertex vtx2 = vces.get(vname);
+	    	 vtx2.neighbours.remove(vname);
+	     }
+	     
+	     vces.remove(vname);
+	}
+	
+	public boolean haspath(String vname1,String vname2){
+		return haspath(vname1, vname2);
+	}
+	
+	private boolean Haspath(String vname1,String vname2,HashMap<String,Boolean> hp){
+		if(vname1 == vname2){
+			return true;
+		}
+		vertex vtx = vces.get(vname1);
+		
+		hp.put(vname1, true);
+		
+		ArrayList<String> al = new ArrayList<>(vtx.neighbours.keySet());
+		for(String val:al){
+			if(hp.containsKey(val) == false){
+				Boolean b = Haspath(val,vname2,hp);
+				if(b == true){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
