@@ -1,0 +1,18 @@
+package BinaryTree;
+
+public class Client {
+
+	public static void main(String[] args) {
+	    BinaryTree bt = new BinaryTree();
+	    
+	    // 7 true 4 true 10 true 8 false false false true 9 false false true 3 true 2 false false true 7 false true 6 false false
+
+	    bt.display();
+	    System.out.println("----------------------------");
+	    
+	    bt.remove_nodes_on_root_to_leafpath(4);
+	    
+	    bt.display();
+	}
+
+}
